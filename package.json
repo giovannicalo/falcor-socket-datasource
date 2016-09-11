@@ -16,12 +16,12 @@
 	"description": "A socket DataSource for Falcor",
 	"devDependencies": {
 		"babel-cli": "^6.8.0",
+		"babel-istanbul": "^0.11.0",
 		"babel-preset-node-giovanni": "^1.1.2",
 		"chai": "^3.5.0",
 		"coveralls": "^2.11.9",
 		"eslint-config-giovanni": "^2.0.0",
 		"falcor-router": "^0.4.0",
-		"isparta": "^4.0.0",
 		"mocha": "^2.4.5",
 		"posix-cat": "^1.1.1",
 		"rimraf": "^2.5.2",
@@ -37,7 +37,7 @@
 		"url": "https://github.com/giovannicalo/falcor-socket-datasource.git"
 	},
 	"scripts": {
-		"coverage": "babel-node node_modules/isparta/bin/isparta cover node_modules/mocha/bin/_mocha --report lcovonly -- --compilers js:babel-register --recursive && cat coverage/lcov.info | node node_modules/coveralls/bin/coveralls.js && rimraf coverage",
+		"coverage": "babel-node node_modules/babel-istanbul/lib/cli cover node_modules/mocha/bin/_mocha --report lcovonly -- --compilers js:babel-register --recursive && cat coverage/lcov.info | node node_modules/coveralls/bin/coveralls.js && rimraf coverage",
 		"lint": "eslint .",
 		"prepublish": "npm run lint && npm test && babel source --out-dir dist",
 		"test": "mocha --compilers js:babel-register --recursive"
