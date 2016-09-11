@@ -1,10 +1,8 @@
-import Chai from "chai";
+import Chai, { expect } from "chai";
 import Falcor from "falcor";
 
 import FalcorSocketDataSource from "../source";
 import Server from "./server";
-
-const expect = Chai.expect;
 
 Chai.config.showDiff = true;
 
